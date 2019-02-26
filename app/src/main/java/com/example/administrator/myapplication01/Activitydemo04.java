@@ -206,72 +206,72 @@ public class Activitydemo04 extends AppCompatActivity {
             SZcz00.shijucha = SZcz00.houshiju - SZcz00.qianshiju;
             SZcz00.shijuleijicha = SZcz00.shijucha;
 
-                if (Math.abs(int_BHzhong - int_BBzhong - t1) < Math.abs(int_BHzhong - int_BBzhong - t2))
-                    p = 1;
-                else
-                    p = 0;//判断第一站后视点的基辅值是4687还是4787
+            if (Math.abs(int_BHzhong - int_BBzhong - t1) < Math.abs(int_BHzhong - int_BBzhong - t2))
+                p = 1;
+            else
+                p = 0;//判断第一站后视点的基辅值是4687还是4787
 
-                if (p == 1) {
-                    SZcz00.houdushucha = int_BBzhong - int_BHzhong + t1;
-                    SZcz00.qiandushucha = int_FBzhong - int_FHzhong + t2;
-                } else {
-                    SZcz00.houdushucha = int_BBzhong - int_BHzhong + t2;
-                    SZcz00.qiandushucha = int_FBzhong - int_FHzhong + t1;
-                }
-
-                SZcz00.heigaocha = int_BBzhong - int_FBzhong;
-                SZcz00.honggaocha = int_BHzhong - int_FHzhong;
-
-                if (Math.abs(SZcz00.honggaocha - SZcz00.heigaocha - 100) < Math.abs(SZcz00.honggaocha - SZcz00.heigaocha + 100))
-                    SZcz00.gaochacha = SZcz00.honggaocha - SZcz00.heigaocha - 100;
-                    //计算红黑面高差之差
-                else
-                    SZcz00.gaochacha = SZcz00.honggaocha - SZcz00.heigaocha + 100;
-
-                if (Math.abs(int_BBzhong - int_FBzhong - (int_BHzhong - int_FHzhong - 100)) <= 5)
-                    SZcz00.gaochazhongshu = (double) SZjisuan.sslr0((int_BBzhong - int_FBzhong + int_BHzhong - int_FHzhong - 100) / 2) / 1000.0;
-                else
-                    SZcz00.gaochazhongshu = (double) SZjisuan.sslr0((int_BBzhong - int_FBzhong + int_BHzhong - int_FHzhong + 100) / 2) / 1000.0;
-
-                if (xianchapanduan(SZcz00, Activitydemo04.this) == 0) {
-                    Toast.makeText(Activitydemo04.this, "数据合格，可进行下一站测量", Toast.LENGTH_LONG).show();
-
-                    //添加测站(转点)
-                    if (zhuandian == 1) {
-                        num_zd += 1;
-                        TableLayout added = findViewById(R.id.table);
-                        AddCZ.Add04_zd(num_zd, cz00, added, Activitydemo04.this);
-
-                    }
-                    else {
-                        TableLayout added = findViewById(R.id.table);
-                        AddCZ.Add04(num + 1 - num_zd, cz00, added, Activitydemo04.this);
-                    }
-                    SZcz.add(SZcz00);
-                    SZcd.add(SZcd00);
-                    Log.i("demo04 String add()", 1 + " " + cz00.sr[1]);
-                    cz[num - 1] = cz00;
-
-                    num += 1;
-                    Log.i("demo04", "测站：" + Integer.toString(num - 1) + "高差中数：" + Double.toString(SZcz.get(0).gaochazhongshu) + "距离：" + Double.toString(SZcz.get(0).houshiju + SZcz.get(0).qianshiju));
-                    Log.i("SZcz", "数组元素个数：" + Integer.toString(SZcz.size()));
-                    flag = 0;
-                }
-                else {
-                    //String strts = "提示：\n"+"前视距为："+Double.toString(SZcz00.qianshiju)+",后视距为: "+Double.toString(SZcz00.houshiju)+",前后视距差超限。建议保持测站不动，减小"+Double.toString(Math.abs(SZcz00.shijucha/2))+" 前视距";
-                    Toast.makeText(Activitydemo04.this, SZjisuan.str, Toast.LENGTH_LONG).show();
-
-                    //重测
-                    if (SZcz00.zhuandian == 1)
-                        SZchongce_zd(num_zd, cz00);
-                    else {
-                        SZchongce(num - num_zd, cz00);
-                        num = 1;
-                    }
-                }
+            if (p == 1) {
+                SZcz00.houdushucha = int_BBzhong - int_BHzhong + t1;
+                SZcz00.qiandushucha = int_FBzhong - int_FHzhong + t2;
+            } else {
+                SZcz00.houdushucha = int_BBzhong - int_BHzhong + t2;
+                SZcz00.qiandushucha = int_FBzhong - int_FHzhong + t1;
             }
 
+            SZcz00.heigaocha = int_BBzhong - int_FBzhong;
+            SZcz00.honggaocha = int_BHzhong - int_FHzhong;
+
+            if (Math.abs(SZcz00.honggaocha - SZcz00.heigaocha - 100) < Math.abs(SZcz00.honggaocha - SZcz00.heigaocha + 100))
+                SZcz00.gaochacha = SZcz00.honggaocha - SZcz00.heigaocha - 100;
+                //计算红黑面高差之差
+            else
+                SZcz00.gaochacha = SZcz00.honggaocha - SZcz00.heigaocha + 100;
+
+            if (Math.abs(int_BBzhong - int_FBzhong - (int_BHzhong - int_FHzhong - 100)) <= 5)
+                SZcz00.gaochazhongshu = (double) SZjisuan.sslr0((int_BBzhong - int_FBzhong + int_BHzhong - int_FHzhong - 100) / 2) / 1000.0;
+            else
+                SZcz00.gaochazhongshu = (double) SZjisuan.sslr0((int_BBzhong - int_FBzhong + int_BHzhong - int_FHzhong + 100) / 2) / 1000.0;
+
+            if (xianchapanduan(SZcz00, Activitydemo04.this) == 0) {
+                Toast.makeText(Activitydemo04.this, "数据合格，可进行下一站测量", Toast.LENGTH_LONG).show();
+
+                //添加测站(转点)
+                if (zhuandian == 1) {
+                    num_zd += 1;
+                    TableLayout added = findViewById(R.id.table);
+                    AddCZ.Add04_zd(num_zd, cz00, added, Activitydemo04.this);
+
+                }
+                else {
+                    TableLayout added = findViewById(R.id.table);
+                    AddCZ.Add04(num + 1 - num_zd, cz00, added, Activitydemo04.this);
+                }
+                SZcz.add(SZcz00);
+                SZcd.add(SZcd00);
+                Log.i("demo04 String add()", 1 + " " + cz00.sr[1]);
+                cz[num - 1] = cz00;
+
+                num += 1;
+                Log.i("demo04", "测站：" + Integer.toString(num - 1) + "高差中数：" + Double.toString(SZcz.get(0).gaochazhongshu) + "距离：" + Double.toString(SZcz.get(0).houshiju + SZcz.get(0).qianshiju));
+                Log.i("SZcz", "数组元素个数：" + Integer.toString(SZcz.size()));
+                flag = 0;
+            }
+            else {
+                //String strts = "提示：\n"+"前视距为："+Double.toString(SZcz00.qianshiju)+",后视距为: "+Double.toString(SZcz00.houshiju)+",前后视距差超限。建议保持测站不动，减小"+Double.toString(Math.abs(SZcz00.shijucha/2))+" 前视距";
+                Toast.makeText(Activitydemo04.this, SZjisuan.str, Toast.LENGTH_LONG).show();
+
+                //重测
+                if (SZcz00.zhuandian == 1)
+                    SZchongce_zd(num_zd, cz00);
+                else {
+                    SZchongce(num - num_zd, cz00);
+                    num = 1;
+                }
+            }
         }
+
+    }
 
 
     public void  duquDT(AddCZ cz00,SZceduan SZcd00, SZcezhan SZcz00,int zhuandian)
@@ -369,6 +369,19 @@ public class Activitydemo04 extends AppCompatActivity {
         if (n > 0)
             Toast.makeText(Activitydemo04.this, "请输入完整数据！", Toast.LENGTH_LONG).show();
         else {
+            SZcz00.BB_shang = str_BBshang;
+            SZcz00.BB_xia = str_BBxia;
+
+            SZcz00.FB_shang = str_FBshang;
+            SZcz00.FB_xia = str_FBxia;
+
+            SZcz00.BB_zhong = str_BBzhong;
+            SZcz00.BH_zhong = str_BHzhong;
+
+            SZcz00.FB_zhong = str_FBzhong;
+            SZcz00.FH_zhong = str_FHzhong;
+            SZcz00.flag = num;
+
             int int_BBshang = Integer.parseInt(str_BBshang);
             int int_BBxia = Integer.parseInt(str_BBxia);
             int int_FBshang = Integer.parseInt(str_FBshang);
@@ -649,7 +662,7 @@ public class Activitydemo04 extends AppCompatActivity {
                     Log.i("demo04 String add()", 5 + " " + cz[num - 1].sr[5 + i]);
 
                     //后红中丝
-                    String str_BHzhong = cz[num - 1].sr[10 + i];
+                    String str_BHzhong = cz[num - 1].sr[6 + i];
                     assert str_BHzhong != null;
                     Log.i("demo04 String add()", 6 + " " + cz[num - 1].sr[6 + i]);
 
@@ -750,7 +763,7 @@ public class Activitydemo04 extends AppCompatActivity {
                             Log.i("demo04 结束测量—重测后NUM:",Integer.toString(num));
                             Log.i("demo04 结束测量—重测后 flag:",Integer.toString(flag));
 
-                           // Log.i("demo04 结束测量—重测后",Integer.toString(num));
+                            // Log.i("demo04 结束测量—重测后",Integer.toString(num));
 
                             SZcz.add(SZcz00[num - 1]);
                             SZcd.add(SZcd00[num - 1]);

@@ -433,10 +433,10 @@ public class Activitydemo04 extends AppCompatActivity {
                     num_zd +=1;
                     flag = num_zd;
                     Log.i("demo04","flag: " + flag);
-                    AddCZ.Add03_zd(num_zd,cz00,added,Activitydemo04.this);
+                    AddCZ.Add04_zd(num_zd,cz00,added,Activitydemo04.this);
                 }
                 else
-                    AddCZ.Add03(num + 1 - num_zd, cz00, added, Activitydemo04.this);
+                    AddCZ.Add04(num + 1 - num_zd, cz00, added, Activitydemo04.this);
 
                 SZcz.add(SZcz00);
                 SZcd.add(SZcd00);
@@ -654,22 +654,22 @@ public class Activitydemo04 extends AppCompatActivity {
                     Log.i("demo04 String add()", 6 + " " + cz[num - 1].sr[6 + i]);
 
                     //读取前黑上丝
-                    String str_FBshang = cz[num - 1].sr[6 + i];
+                    String str_FBshang = cz[num - 1].sr[7 + i];
                     assert str_FBshang != null;
                     Log.i("demo04 String add()", 7 + " " + cz[num - 1].sr[7 + i]);
 
                     //读取前黑下丝
-                    String str_FBxia = cz[num - 1].sr[7 + i];
+                    String str_FBxia = cz[num - 1].sr[8 + i];
                     assert str_FBxia != null;
                     Log.i("demo04 String add()", 8 + " " + cz[num - 1].sr[8 + i]);
 
                     //前黑中丝
-                    String str_FBzhong = cz[num - 1].sr[8 + i];
+                    String str_FBzhong = cz[num - 1].sr[9 + i];
                     assert str_FBzhong != null;
                     Log.i("demo04 String add()", 9 + " " + cz[num - 1].sr[9 + i]);
 
                     //前红中丝
-                    String str_FHzhong = cz[num - 1].sr[9 + i];
+                    String str_FHzhong = cz[num - 1].sr[10 + i];
                     assert str_FHzhong != null;
                     Log.i("demo04 String add()", 10 + " " + cz[num - 1].sr[10 + i]);
 

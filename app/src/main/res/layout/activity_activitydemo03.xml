@@ -1,0 +1,455 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.administrator.myapplication01.Activitydemo03"
+    android:clickable="true"
+    android:scrollbars="vertical"
+    >
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textSize="28sp"
+
+            android:text="后前前后"
+            />
+
+        <HorizontalScrollView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+            <TableLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/table">
+                <TableRow>
+                    <TextView
+                        android:id="@+id/et_string01"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center"
+
+                        android:background="#dcdcdc"
+                        android:textColor="#000000"
+                        />
+
+                </TableRow>
+
+                <TableRow>
+                    <TextView />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+
+                        android:gravity="center"
+                        android:textColor="#000000"
+                        android:textSize="14sp"
+                        android:background="#dcdcdc"
+
+                        android:text="后视点点号："
+                        />
+
+                    <EditText
+                        android:id="@+id/back_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:textSize="12sp"
+                        android:hint="请输入后视点点号"
+
+                        android:singleLine = "true"
+                        />
+
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+
+                        />
+
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+
+                        android:gravity="center"
+                        android:textColor="#000000"
+                        android:textSize="14sp"
+                        android:background="#dcdcdc"
+
+                        android:text="前视点点号："
+                        />
+
+                    <EditText
+                        android:id="@+id/front_name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:textSize="12sp"
+                        android:hint="请输入前视点点号"
+                        android:singleLine = "true"
+                        />
+
+                </TableRow>
+
+                <TableRow>
+                    <TextView />
+                </TableRow>
+
+                <TableRow
+                    android:shrinkColumns = "1"
+                    >
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+
+                        android:gravity="center"
+                        android:textColor="#000000"
+                        android:textSize="14sp"
+                        android:background="#dcdcdc"
+
+                        android:text="后视黑面上丝："
+
+                        />
+
+                    <EditText
+                        android:id="@+id/double_BBshang"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:textSize="12sp"
+                        android:hint="上丝读数（单位:mm）"
+                        android:singleLine = "true"
+                        android:inputType="numberSigned"
+                        />
+
+                </TableRow>
+
+                <TableRow>
+                    <TextView />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+
+                        android:gravity="center"
+                        android:textColor="#000000"
+                        android:textSize="14sp"
+                        android:background="#dcdcdc"
+
+                        android:text="后视黑面下丝："
+                        />
+
+                    <EditText
+                        android:id="@+id/double_BBxia"
+                        android:layout_width="wrap_content"
+                        android:layout_height = "wrap_content"
+
+                        android:textSize="12sp"
+                        android:hint="下丝读数（单位:mm）"
+                        android:singleLine = "true"
+                        android:inputType="numberSigned"
+                        />
+
+                </TableRow>
+
+                <TableRow>
+                    <TextView />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+
+                        android:gravity="center"
+                        android:textColor="#000000"
+                        android:textSize="14sp"
+                        android:background="#dcdcdc"
+
+                        android:text="后视黑面中丝："
+                        />
+
+                    <EditText
+                        android:id="@+id/double_BBzhong"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+
+                        android:textSize="12sp"
+                        android:hint="黑面中丝读数（单位:mm）"
+                        android:singleLine = "true"
+                        android:inputType="numberSigned"
+                        />
+
+                </TableRow>
+
+                <TableRow>
+                    <TextView />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+
+                        android:gravity="center"
+                        android:textColor="#000000"
+                        android:textSize="14sp"
+                        android:background="#dcdcdc"
+
+                        android:text="前视黑面上丝："
+
+                        />
+
+                    <EditText
+                        android:id="@+id/double_FBshang"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:textSize="12sp"
+                        android:hint="上丝读数（单位:mm）"
+                        android:singleLine = "true"
+                        android:inputType="numberSigned"
+                        />
+
+
+
+                </TableRow>
+
+                <TableRow>
+                    <TextView />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+
+                        android:gravity="center"
+                        android:textColor="#000000"
+                        android:textSize="14sp"
+                        android:background="#dcdcdc"
+
+                        android:text="前视黑面下丝："
+                        />
+
+                    <EditText
+                        android:id="@+id/double_FBxia"
+                        android:layout_width="wrap_content"
+                        android:layout_height = "wrap_content"
+
+                        android:textSize="12sp"
+                        android:hint="下丝读数（单位:mm）"
+                        android:singleLine = "true"
+                        android:inputType="numberSigned"
+                        />
+
+                </TableRow>
+
+                <TableRow>
+                    <TextView />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+
+                        android:gravity="center"
+                        android:textColor="#000000"
+                        android:textSize="14sp"
+                        android:background="#dcdcdc"
+
+                        android:text="前视黑面中丝："
+                        />
+
+                    <EditText
+                        android:id="@+id/double_FBzhong"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+
+                        android:textSize="12sp"
+                        android:hint="黑面中丝读数（单位:mm）"
+                        android:singleLine = "true"
+                        android:inputType="numberSigned"
+                        />
+                </TableRow>
+
+                <TableRow>
+                    <TextView />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+
+                        android:gravity="center"
+                        android:textColor="#000000"
+                        android:textSize="14sp"
+                        android:background="#dcdcdc"
+
+                        android:text="前视红面中丝："
+                        />
+
+                    <EditText
+                        android:id="@+id/double_FHzhong"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:textSize="12sp"
+                        android:hint="红面中丝读数（单位:mm）"
+                        android:singleLine = "true"
+                        android:inputType="numberSigned"
+                        />
+
+                </TableRow>
+
+                <TableRow>
+                    <TextView />
+                </TableRow>
+
+                <TableRow>
+                    <TextView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+
+                        android:gravity="center"
+                        android:textColor="#000000"
+                        android:textSize="14sp"
+                        android:background="#dcdcdc"
+
+                        android:text="后视红面中丝："
+                        />
+
+                    <EditText
+                        android:id="@+id/double_BHzhong"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+
+                        android:textSize="12sp"
+                        android:hint="红面中丝读数（单位:mm）"
+                        android:singleLine = "true"
+                        android:inputType="numberSigned"
+                        />
+                </TableRow>
+
+                <TableRow>
+                    <TextView />
+                </TableRow>
+
+
+            </TableLayout>
+
+        </HorizontalScrollView>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <Button
+                android:id="@+id/button_add_zd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="添加转点"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/button_addcz"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="继续测量"
+                android:textSize="16dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingLeft ="20sp"
+                />
+
+            <Button
+                android:id="@+id/button_end"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="结束测量"
+                android:textSize="16dp" />
+        </LinearLayout>
+
+
+        <Button
+            android:id="@+id/button_chongce"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="重测"
+            android:textSize="16dp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft ="20sp"
+            />
+
+        <Button
+            android:id="@+id/button_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="上一步"
+            android:textSize="16dp" />
+
+        <HorizontalScrollView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TableLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                >
+
+                <TableRow>
+
+                    <TextView />
+
+                </TableRow>
+
+            </TableLayout>
+
+        </HorizontalScrollView>
+
+    </LinearLayout>
+
+</ScrollView>

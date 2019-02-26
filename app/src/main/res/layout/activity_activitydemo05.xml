@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.example.administrator.myapplication01.Activitydemo05">
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="center">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            android:gravity="center"
+            android:textColor="#000000"
+            android:textSize="28sp"
+
+            android:text="平差计算"
+            />
+
+        <TableLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            >
+
+
+            <TableRow>
+                <TextView android:text="    "/>
+
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+
+                    android:gravity="center"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:background="#dcdcdc"
+
+                    android:text="起点高程："
+                    />
+
+                <EditText
+                    android:id="@+id/start_hength"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:textSize="12sp"
+                    android:hint="请输入起点高程"
+
+                    android:singleLine = "true"
+                    />
+
+            </TableRow>
+
+            <TableRow>
+                <TextView
+
+                    />
+
+            </TableRow>
+
+            <TableRow>
+                <TextView android:text="    "/>
+                <TextView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+
+                    android:gravity="center"
+                    android:textColor="#000000"
+                    android:textSize="14sp"
+                    android:background="#dcdcdc"
+
+                    android:text="终点高程："
+                    />
+
+                <EditText
+                    android:id="@+id/end_hength"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:textSize="12sp"
+                    android:hint="请输入终点高程"
+                    android:singleLine = "true"
+                    />
+
+            </TableRow>
+
+            <TableRow>
+                <TextView />
+            </TableRow>
+
+        </TableLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center">
+
+            <CheckBox
+                android:id="@+id/box1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="显示改正数"
+                android:textStyle="bold"
+                android:textColor="#FF69B4"
+                android:checked="true"/>
+
+            <CheckBox
+                android:id="@+id/box2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="显示各测站数据"
+                android:textStyle="bold"
+                android:textColor="#FF69B4"
+                android:checked="true"/>
+
+        </LinearLayout>
+
+
+
+        <Button
+            android:id="@+id/button_end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="计算测量结果"
+            android:textSize="16dp" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:paddingLeft ="20sp"
+            />
+
+        <Button
+            android:id="@+id/button_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="上一步"
+            android:textSize="16dp" />
+
+        <TextView
+            android:id="@+id/advise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:textSize="12dp"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <HorizontalScrollView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TableLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@id/table">
+
+
+                    <TableRow>
+                        <TextView />
+                    </TableRow>
+
+                </TableLayout>
+
+            </HorizontalScrollView>
+
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

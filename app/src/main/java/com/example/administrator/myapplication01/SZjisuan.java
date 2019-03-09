@@ -6,10 +6,6 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.sql.Time;
-import java.util.Timer;
-import java.util.TimerTask;
-
 /**
  * Created by Administrator on 2018/7/24.
  */
@@ -18,27 +14,6 @@ import java.util.TimerTask;
 public class SZjisuan {
     static  int MAX = 50;
     static String str;
-    //提示显示时间
-    static int time = 15000;
-
-    private static void controlToastTime(final Toast toast, int duration)
-    {
-        final Timer timer = new Timer();
-        timer.schedule(new TimerTask() {
-            @Override
-            public void run() {
-                toast.show();
-            }
-        },3500);
-        new Timer().schedule(new TimerTask() {
-            @Override
-            public void run() {
-                toast.cancel();
-                timer.cancel();
-            }
-        },duration);
-    }
-
 
 
     public static int sslr0(double x)
@@ -130,18 +105,14 @@ public class SZjisuan {
     {
         Log.i("前视距",Double.toString(qianshiju) + " (m)");
         Log.i("后视距",Double.toString(houshiju) + " (m)");
-        //Toast toast = new Toast(this);
         if(qianshiju>100)
         {
-            Toast toast = Toast.makeText(context,"前视距超限了！",Toast.LENGTH_LONG);
-            controlToastTime(toast,time);
-            //toast.show();
+            Toast.makeText(context,"前视距超限了！",Toast.LENGTH_LONG).show();
             return 1;
         }
         if(houshiju>100)
         {
-            Toast toast = Toast.makeText(context,"后视距超限了！",Toast.LENGTH_LONG);
-            controlToastTime(toast,time);
+            Toast.makeText(context,"后视距超限了！",Toast.LENGTH_LONG).show();
             return 1;
         }
         return 0;
@@ -155,8 +126,6 @@ public class SZjisuan {
             return 0;
         else if(qianshiju>houshiju)
         {
-            Toast toast = Toast.makeText(context,"视距差超限了！请注意提示信息！",Toast.LENGTH_LONG);
-            controlToastTime(toast,time);
             //Toast.makeText(context,"视距差超限了！请注意提示信息！",Toast.LENGTH_SHORT).show();
             //TextView et_double_BBshang =(EditText) findViewById(R.id.double_BBshang) ;
             //printf("前视距为：%.3lfm，后视距为%.3lf,前后视距差超限。建议保持测站不动，减小%.3lfm前视距",qianshiju,houshiju,fabs(shijucha/2));
@@ -167,8 +136,7 @@ public class SZjisuan {
         }
         else
         {
-            Toast toast = Toast.makeText(context,"视距差超限了！请注意提示信息！",Toast.LENGTH_LONG);
-            controlToastTime(toast,time);
+            //Toast.makeText(context,"视距差超限了！请注意提示信息！",Toast.LENGTH_LONG).show();
             // printf("前视距为：%.3lf，后视距为%.3lfm,前后视距差超限。建议保持测站不动，增大%.3lfm前视距",qianshiju,houshiju,fabs(shijucha/2));
             str = "提示：\n" + "前视距为："+Double.toString(qianshiju)+",后视距为: "+Double.toString(houshiju)+",前后视距差超限。建议保持测站不动，增大"+Double.toString(Math.abs(shijucha/2))+ " 前视距";
             //Log.i("提示信息",str);
@@ -188,17 +156,13 @@ public class SZjisuan {
             {
                 str = "前后视距差累积值为:" + Double.toString(shijuleijicha) + " m，建议下一测站使前视距大于后视距\n";
                 //printf("前后视距差累积值为%.3lfm，建议下一测站使前视距大于后视距\n",shijuleijicha);
-                Toast toast = Toast.makeText(context,str,Toast.LENGTH_LONG);
-                controlToastTime(toast,time);
-                //Toast.makeText(context,str,Toast.LENGTH_LONG).show();
+                Toast.makeText(context,str,Toast.LENGTH_LONG).show();
             }
             else
             {
                 str = "前后视距差累积值为:" + Double.toString(shijuleijicha) + " m，建议下一测站使前视距小于后视距\n";
                 //printf("前后视距差累积值为%.3lf，建议下一测站使前视距小于后视距\n",shijuleijicha);
-                Toast toast = Toast.makeText(context,str,Toast.LENGTH_LONG);
-                controlToastTime(toast,time);
-                //Toast.makeText(context,str,Toast.LENGTH_LONG).show();
+                Toast.makeText(context,str,Toast.LENGTH_LONG).show();
             }
             Log.i("前后视距累积差",str);
             return 0;
@@ -209,17 +173,13 @@ public class SZjisuan {
         {
             str = "前后视距差累积值为:" + Double.toString(shijuleijicha) + " m，提示：视距差累积超限。建议保持测站不动，增大前视距\n";
             //printf("前后视距差累积值为%.3lfm，提示：视距差累积超限。建议保持测站不动，增大前视距\n",shijuleijicha);
-            Toast toast = Toast.makeText(context,str,Toast.LENGTH_LONG);
-            controlToastTime(toast,time);
-            //Toast.makeText(context,str,Toast.LENGTH_LONG).show();
+            Toast.makeText(context,str,Toast.LENGTH_LONG).show();
         }
         else
         {
             str = "前后视距差累积值为:" + Double.toString(shijuleijicha) + " m，提示：视距差累积超限。建议保持测站不动，减小前视距\n";
             //printf("前后视距差累积值为%.3lf，提示：视距差累积超限。建议保持测站不动，减小前视距\n",shijuleijicha);
-            Toast toast = Toast.makeText(context,str,Toast.LENGTH_LONG);
-            controlToastTime(toast,time);
-            //Toast.makeText(context,str,Toast.LENGTH_LONG).show();
+            Toast.makeText(context,str,Toast.LENGTH_LONG).show();
         }
         Log.i("前后视距累积差",str);
         return 1;
@@ -228,19 +188,18 @@ public class SZjisuan {
     //后视点红黑面读数差是否超限
     public  static int houdushuchapanduan(int hongheidushucha,Context context)
     {
-        Log.i("后视点红黑面读数差",Integer.toString(hongheidushucha));
+        //Log.i("后视点红黑面读数差",Integer.toString(hongheidushucha));
         if(Math.abs(hongheidushucha)>3)
         {
-            str = "提示：后视点红黑面读数差（" + Integer.toString(hongheidushucha) + " mm）超限，建议重新对后视点进行观测\n";
+            str = "后视点红黑面读数差为:" + Integer.toString(hongheidushucha) + " mm，提示：后视点红黑面读数差超限，建议重新对后视点进行观测\n";
             //printf("后视点红黑面读数差为%dmm，提示：后视点红黑面读数差超限，建议重新对后视点进行观测\n",hongheidushucha);
-            Toast toast = Toast.makeText(context,str,Toast.LENGTH_LONG);
-            controlToastTime(toast,time);
+            Toast.makeText(context,str,Toast.LENGTH_LONG).show();
             Log.i("后视点红黑面读数差",str);
             return 1;
         }
         else
         {
-            str = "提示：后视点红黑面读数差（" + Integer.toString(hongheidushucha) + " mm）超限，建议重新对后视点进行观测\n";
+            str = "后视点红黑面读数差为:" + Integer.toString(hongheidushucha) + " mm，提示：后视点红黑面读数差超限，建议重新对后视点进行观测\n";
             Log.i("后视点红黑面读数差",str);
             return 0;
         }
@@ -250,19 +209,17 @@ public class SZjisuan {
     //前视点红黑面读数差是否超限
     public  static int qiandushuchapanduan(int qianheidushucha,Context context)
     {
-        Log.i("后视点红黑面读数差",Integer.toString(qianheidushucha));
         if (Math.abs(qianheidushucha)>3)
         {
-            str = "提示：前视点红黑面读数差（" + Integer.toString(qianheidushucha) + " mm）超限，建议重新对前视点进行观测\n";
+            str = "前视点红黑面读数差为:" + Integer.toString(qianheidushucha) + " mm，提示：前视点红黑面读数差超限，建议重新对前视点进行观测\n";
             //printf("前视点红黑面读数差为%dmm，提示：前视点红黑面读数差超限，建议重新对前视点进行观测\n",hongheidushucha);
-            Toast toast = Toast.makeText(context,str,Toast.LENGTH_LONG);
-            controlToastTime(toast,time);
+            Toast.makeText(context,str,Toast.LENGTH_LONG).show();
 
             return 1;
         }
         else
         {
-            str = "提示：前视点红黑面读数差（" + Integer.toString(qianheidushucha) + " mm）超限，建议重新对前视点进行观测\n";
+            str = "前视点红黑面读数差为:" + Integer.toString(qianheidushucha) + " mm，提示：前视点红黑面读数差超限，建议重新对前视点进行观测\n";
             Log.i("前视点红黑面读数差为:",str);
             return 0;
         }
@@ -276,8 +233,7 @@ public class SZjisuan {
         {
             str = "红黑面所测高差之差为:" + Integer.toString(gaochacha) + " mm，提示：重测该测站\n";
             //printf("红黑面所测高差之差为%dmm，提示：重测该测站\n",gaochacha);
-            Toast toast = Toast.makeText(context,str,Toast.LENGTH_LONG);
-            controlToastTime(toast,time);
+            Toast.makeText(context,str,Toast.LENGTH_LONG).show();
             Log.i("红黑面所测高差之差",str);
             return 1;
         }
@@ -319,3 +275,5 @@ public class SZjisuan {
         return g;
     }
 }
+
+

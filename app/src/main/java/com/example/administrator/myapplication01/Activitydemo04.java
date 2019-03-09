@@ -87,21 +87,36 @@ public class Activitydemo04 extends AppCompatActivity {
     {
         //SZcz = new SZcezhan();
         int n = 0;
-        if (SZjisuan.shijupanduan(SZcz.qianshiju,SZcz.houshiju,context) != 0)
+        if (SZjisuan.shijupanduan(SZcz.qianshiju,SZcz.houshiju,context) != 0) {
             n++;
-        if (SZjisuan.shijuchapanduan(SZcz.qianshiju,SZcz.houshiju,SZcz.shijucha,context) != 0)
+            return n;
+        }
+        else if (SZjisuan.shijuchapanduan(SZcz.qianshiju,SZcz.houshiju,SZcz.shijucha,context) != 0)
+        {
             n++;
-        // if (SZjisuan.str.length()<1)
-        //SZjisuan.str = " ";
+            return n;
+        }
 
-        if (SZjisuan.qianhoushijuleijichapanduan(SZcz.shijuleijicha,context)  != 0)
+        else if (SZjisuan.qianhoushijuleijichapanduan(SZcz.shijuleijicha,context)  != 0)
+        {
             n++;
-        if (SZjisuan.houdushuchapanduan(SZcz.houdushucha,context)  != 0)
+            return n;
+        }
+        else if (SZjisuan.houdushuchapanduan(SZcz.houdushucha,context)  != 0)
+        {
             n++;
-        if (SZjisuan.qiandushuchapanduan(SZcz.qiandushucha,context)  != 0)
+            return n;
+        }
+        else if (SZjisuan.qiandushuchapanduan(SZcz.qiandushucha,context)  != 0)
+        {
             n++;
-        if (SZjisuan.gaochacha(SZcz.gaochacha,context)  != 0)
+            return n;
+        }
+        else if (SZjisuan.gaochacha(SZcz.gaochacha,context)  != 0)
+        {
             n++;
+            return n;
+        }
         Log.i("num:",Integer.toString(n));
         return n;
     }

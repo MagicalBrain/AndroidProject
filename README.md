@@ -6,18 +6,28 @@
 在四等水准测量里有重测功能、添加转点功能，详细的可以查看使用[教程链接](https://www.zybuluo.com/Arbalest-Laevatain/note/1306203)。
 由于时间关系，还有许多不完善的地方，故将项目代码放上来，望有心人进一步完善。
 
+## 下载页面
+
+https://github.com/MagicalBrain/AndroidProject/blob/master/package/release/app-release.apk
+
+进去直接点 Download
+
 ## 项目代码说明
 
-在 https://github.com/MagicalBrain/AndroidProject/tree/master/app/src/main/java/com/example/administrator/myapplication01 目录下存放的是项目的java代码。
+### java代码目录
+
+ https://github.com/MagicalBrain/AndroidProject/tree/master/app/src/main/java/com/example/administrator/myapplication01 
+
+### xml代码目录
 
 https://github.com/MagicalBrain/AndroidProject/tree/master/app/src/main/res/layout
-是页面的xml代码
+
 
 ### 主页面 
 
-xml代码文件：同名
-
 java代码文件：myapplication01
+
+xml代码文件：同名
 
 写了一个使用LinearLayout简单的页面。
 
@@ -27,30 +37,36 @@ java代码文件：myapplication01
 
 ### 顺序选择页面
 
-xml代码文件：同名
-
 java代码文件：Activitydemo02
+
+xml代码文件：同名
 
 选择四等水准测量的观测顺序。
 
 ### 后前前后顺序测量页面 Activitydemo03
 
-xml代码文件：同名
 
 java代码文件：Activitydemo03
+
+xml代码文件：同名
+
 
 
 ### 后后前前顺序测量页面 Activitydemo04
 
+java代码文件：Activitydemo04
+
 xml代码文件：同名
 
-java代码文件：Activitydemo04
+
 
 ### 水准概算页面 Activitydemo05
 
+java代码文件：Activitydemo05
+
 xml代码文件：同名
 
-java代码文件：Activitydemo05
+
 
 ## 其他Java文件
 

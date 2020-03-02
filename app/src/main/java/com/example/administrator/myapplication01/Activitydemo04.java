@@ -243,6 +243,7 @@ public class Activitydemo04 extends AppCompatActivity {
             else
                 SZcz00.gaochacha = SZcz00.honggaocha - SZcz00.heigaocha + 100;
 
+            //计算高差中数
             if (Math.abs(int_BBzhong - int_FBzhong - (int_BHzhong - int_FHzhong - 100)) <= 5)
                 SZcz00.gaochazhongshu = (double) SZjisuan.sslr0((int_BBzhong - int_FBzhong + int_BHzhong - int_FHzhong - 100) / 2) / 1000.0;
             else

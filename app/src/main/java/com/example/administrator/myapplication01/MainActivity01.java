@@ -27,7 +27,7 @@ public class MainActivity01 extends AppCompatActivity {
         //String password=et_password.getText().toString();
         //what?
 
-        Button btn01=(Button) findViewById(R.id.btn01);
+        Button btn01=(Button) findViewById(R.id.Custom);
         assert btn01 != null;
         btn01.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,7 +38,7 @@ public class MainActivity01 extends AppCompatActivity {
         });
 
         //设置页面跳转
-        Button btn02=(Button) findViewById(R.id.btn02);
+        Button btn02=(Button) findViewById(R.id.Fourth_class);
         assert btn02 != null;
         btn02.setOnClickListener(new View.OnClickListener() {
             @Override

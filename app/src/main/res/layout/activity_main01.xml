@@ -38,7 +38,7 @@
             android:orientation="horizontal">
 
             <Button
-                android:id="@+id/btn01"
+                android:id="@+id/Custom"
                 android:text="自定义"
                 android:textSize="16dp"
 
@@ -47,7 +47,7 @@
                 />
 
             <Button
-                android:id="@+id/btn02"
+                android:id="@+id/Fourth_class"
                 android:text="四等水准测量"
                 android:textSize="16dp"
 

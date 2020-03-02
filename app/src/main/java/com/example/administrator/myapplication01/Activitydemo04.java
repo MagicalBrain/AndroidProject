@@ -87,31 +87,36 @@ public class Activitydemo04 extends AppCompatActivity {
     {
         //SZcz = new SZcezhan();
         int n = 0;
+        //前后视距检核
         if (SZjisuan.shijupanduan(SZcz.qianshiju,SZcz.houshiju,context) != 0) {
             n++;
             return n;
         }
+        //视距差检核
         else if (SZjisuan.shijuchapanduan(SZcz.qianshiju,SZcz.houshiju,SZcz.shijucha,context) != 0)
         {
             n++;
             return n;
         }
-
+        //视距差累计查检核
         else if (SZjisuan.qianhoushijuleijichapanduan(SZcz.shijuleijicha,context)  != 0)
         {
             n++;
             return n;
         }
+        //后读数差检核
         else if (SZjisuan.houdushuchapanduan(SZcz.houdushucha,context)  != 0)
         {
             n++;
             return n;
         }
+        //前读数差检核
         else if (SZjisuan.qiandushuchapanduan(SZcz.qiandushucha,context)  != 0)
         {
             n++;
             return n;
         }
+        //高差之差检核
         else if (SZjisuan.gaochacha(SZcz.gaochacha,context)  != 0)
         {
             n++;
